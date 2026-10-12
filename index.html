@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f0f2f5;
+        }
+        h2 {
+            color: #222;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <noscript></noscript>
+    <script src="./main.js"></script>
+    <h1>'task1' Marker output area</h1>
+    <div id="marker-output"></div>
+    <script>
+        const redMarker = new RefillableMarker("red", 20);
+        redMarker.print("Hello World! This text is too long for this marker.");
+        redMarker.refill();
+    </script>
+    <h1>'task2'</h1>
+    <div id="dateText"></div>
+    <div id="checkDate"></div>
+    <div id="isLeap"></div>
+    <div id="nextDate"></div>
+    <h1>'task3/4'</h1>
+    <div id="table-Container"></div>
+    <script>
+        const extendedDate = new ExtendedDate();
+        extendedDate.getDateText();
+        extendedDate.checkDate("2026-10-1");
+        extendedDate.checkDate("2026-10-21");
+        extendedDate.isLeapYear();
+        extendedDate.nextDate("2026-10-21");
+        const employees = [
+            new Employee("John", "Doe", "Branch Manager", "Management", 5500),
+            new Employee("Alice", "Smith", "Senior Teller", "Customer Service", 3200),
+            new Employee("Bob", "Johnson", "Financial Analyst", "Finance", 4800),
+            new Employee("Emma", "Brown", "Loan Officer", "Credit & Loans", 4100),
+            new Employee("Michael", "Green", "IT Specialist", "Technical Support", 4300)
+        ];
+        const newStyledTable = new StyledEmpTable(employees);
+        const StyledHtmlTable = newStyledTable.getHtml();
+        document.getElementById("table-Container").innerHTML = StyledHtmlTable;
+    </script>
+</body>
+</html>
